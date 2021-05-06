@@ -26,10 +26,11 @@ class Item extends Component {
                 </label>
 
                 {/* These are the values of each item */}
-                <h4>Item: {this.props.item}</h4>
-                <h4>Brand: {this.props.brand}</h4>
-                <h4>Units: {this.props.units}</h4>
-                <h4>Quantity: {this.props.quantity}</h4>
+                {/* The or operator (||) allows the child to display the new items added to the list */}
+                <h4>Item: {this.props.item || this.props.newItem}</h4>
+                <h4>Brand: {this.props.brand || this.props.newBrand}</h4>
+                <h4>Units: {this.props.units || this.props.newUnits}</h4>
+                <h4>Quantity: {this.props.quantity || this.props.newQuantity}</h4>
 
             </div>
         );
