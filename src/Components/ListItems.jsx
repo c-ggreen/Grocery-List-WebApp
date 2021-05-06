@@ -40,6 +40,9 @@ class ListItems extends Component {
         }
 
     addToList = (input) =>{
+
+        // Maybe could try setting the current list array equal to a new empty array, then mapping into the new array?
+
         let listArray = this.state.list
 
         listArray.push(input)
