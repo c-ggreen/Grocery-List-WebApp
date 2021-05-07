@@ -57,5 +57,7 @@
         justify-content: space-around;
         align-items: center;
         font-family: 'Itim', cursive;
-
       }
+        .purchasedDisplay{
+          display: none;
+        }

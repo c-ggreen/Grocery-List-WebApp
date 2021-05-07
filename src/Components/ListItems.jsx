@@ -43,17 +43,26 @@ class ListItems extends Component {
 
         let listArray = this.state.list
 
-        listArray.push(input)
+
+        // 
+        const newObject = {
+            item: this.state.item,
+            brand: this.state.brand,
+            units: this.state.units,
+            quantity: this.state.quantity,
+            isPurchased: false            
+        }
+        
+        // 
+        listArray.push(newObject)
 
         this.setState({
 
             // Have to set the key values equal to the state so that they copy the value of that state (which is the input); if you don't then an empty string or undefined is returned.
             list: listArray,
-            item: this.state.item,
-            brand: this.state.brand,
-            units: this.state.units,
-            quantity: this.state.quantity,
+
         })
+        console.log(this.state.list);
     } 
 
     render() {
@@ -93,7 +102,7 @@ class ListItems extends Component {
                         }
                         />
 
-                        <input type="number" 
+                        <input type="text" 
                         placeholder="Quantity"
                         value={this.state.quantity}
                         onChange={
@@ -114,13 +123,16 @@ class ListItems extends Component {
 
                     // IMPORTANT: The regular items are coming from the pre-made list array, hence item.item, item.brand, etc.; To access the new input values to add additional list items, you have to create props that are tied to the STATE and not the existing array
                     item={item.item}
-                    newItem= {this.state.item}
+                    
+
                     brand={item.brand}
-                    newBrand={this.state.brand}
+                   
+
                     units={item.units}
-                    newUnits={this.state.units}
+                    
+                    
                     quantity={item.quantity}
-                    newQuantity={this.state.quantity}
+                    
                     /> 
                 })}
                 
